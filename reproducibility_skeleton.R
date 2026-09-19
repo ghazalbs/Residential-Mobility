@@ -113,17 +113,6 @@ set.seed(123)
 
 
 # -----------------------------------------------------------------------------
-# 4. CLASS IMBALANCE
-# -----------------------------------------------------------------------------
-# The event rate is approximately 17%. The ratio of non-events to events in
-# the training partition informed the candidate values for the XGBoost
-# scale_pos_weight parameter, which was tuned alongside other hyperparameters.
-# No resampling of the training data was performed.
-#
-# imbalance_ratio <- sum(y_train == 0) / sum(y_train == 1)
-
-
-# -----------------------------------------------------------------------------
 # 5. TUNING FRAMEWORK
 # -----------------------------------------------------------------------------
 # All candidate algorithms share the same partitions and the same evaluation.
@@ -143,8 +132,7 @@ set.seed(123)
 #   learning_rate    = <candidate values>,
 #   max_depth        = <candidate values>,
 #   subsample        = <candidate values>,
-#   colsample_bytree = <candidate values>,
-#   scale_pos_weight = <candidate values informed by imbalance_ratio>
+#   colsample_bytree = <candidate values>
 # )
 
 # -----------------------------------------------------------------------------
